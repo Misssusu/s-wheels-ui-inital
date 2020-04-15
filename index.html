@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>wheel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --font-size: 14px;
+        }
+
+        #app {
+        }
+
+        body {
+            font-size: var(--font-size);
+        }
+    </style>
+</head>
+<body>
+<div id="app" style="padding-top:100px;padding-left:100px">
+
+<div>
+        <s-collapse  :selected.sync="isSelected" accordion>
+           <s-collapse-item title="面板1" name="1">
+                <div>面板1内容</div>
+            </s-collapse-item>
+            <s-collapse-item title="面板2" name="2">
+                <div>面板2内容</div>
+            </s-collapse-item>
+            <s-collapse-item title="面板3" name="3">
+                <div>面板3内容</div>
+            </s-collapse-item>
+           <s-collapse-item title="面板4" name="4">
+               <div>面板4内容</div>
+            </s-collapse-item>
+        </s-collapse>
+       {{isSelected}}
+    </div>
+
+
+
+<!--    <div>-->
+<!--        <s-popover position="top">-->
+<!--            <template slot="content">-->
+<!--                <div>-->
+<!--                    snksncksncksnckscnks我cnkscnksnckshishsduhsaudhsajdksajdisahdsadj我-->
+<!--                </div>-->
+<!--            </template>-->
+<!--            <s-button>点我</s-button>-->
+<!--        </s-popover>-->
+
+<!--        <s-popover position="bottom">-->
+<!--            <template slot="content">-->
+<!--                <div>-->
+<!--                    snksncksncksnckscnks我cnkscnksnckshishsduhsaudhsajdksajdisahdsadj我-->
+<!--                </div>-->
+<!--            </template>-->
+<!--            <s-button>点我</s-button>-->
+<!--        </s-popover>-->
+
+<!--        <s-popover position="left">-->
+<!--            <template slot="content">-->
+<!--                <div>-->
+<!--                    ksnckshishsduhsaudhsj我-->
+<!--                </div>-->
+<!--            </template>-->
+<!--            <s-button>点我</s-button>-->
+<!--        </s-popover>-->
+
+<!--        <s-popover position="right">-->
+<!--            <template slot="content">-->
+<!--                <div>-->
+<!--                    ksnckshishsduhsaudhsj我-->
+<!--                </div>-->
+<!--            </template>-->
+<!--            <s-button>点我</s-button>-->
+<!--        </s-popover>-->
+
+
+<!--        <div style="margin-top: 40px">-->
+<!--            <s-popover position="top" trigger="hover">-->
+<!--                <template  v-slot:content="{close}">-->
+<!--                    <div>-->
+<!--                        snksncksncksnckscnks我cnkscnksnckshishsduhsaudhsajdksajdisahdsadj我-->
+<!--                    </div>-->
+<!--                    <s-button @click="close">关闭</s-button>-->
+<!--                </template>-->
+<!--                <s-button>点我</s-button>-->
+<!--            </s-popover>-->
+
+<!--            <s-popover position="bottom" trigger="hover">-->
+<!--                <template slot="content">-->
+<!--                    <div>-->
+<!--                        snksncksncksnckscnks我cnkscnksnckshishsduhsaudhsajdksajdisahdsadj我-->
+<!--                    </div>-->
+<!--                </template>-->
+<!--                <s-button>点我</s-button>-->
+<!--            </s-popover>-->
+
+<!--            <s-popover position="left" trigger="hover">-->
+<!--                <template slot="content">-->
+<!--                    <div>-->
+<!--                        ksnckshishsduhsaudhsj我-->
+<!--                    </div>-->
+<!--                </template>-->
+<!--                <s-button>点我</s-button>-->
+<!--            </s-popover>-->
+
+<!--            <s-popover position="right" trigger="hover">-->
+<!--                <template slot="content">-->
+<!--                    <div>-->
+<!--                        ksnckshishsduhsaudhsj我-->
+<!--                    </div>-->
+<!--                </template>-->
+<!--                <s-button>点我</s-button>-->
+<!--            </s-popover>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+        <div>
+            <s-tabs :selected.sync="selectedTab">
+                <s-tabs-nav>
+                    <template v-slot:actions="actions">
+                        <button>按钮</button>
+                    </template>
+                    <s-tabs-item name="1">
+                        <s-icon name="loading"></s-icon>
+                        Tab1
+                    </s-tabs-item>
+                    <s-tabs-item name="2" disabled>Tab2</s-tabs-item>
+                    <s-tabs-item name="3">Tab3333333333</s-tabs-item>
+                    <s-tabs-item name="4">Tab4</s-tabs-item>
+                </s-tabs-nav>
+                <s-tabs-body>
+                    <s-tabs-pane name="1">Tab1内容</s-tabs-pane>
+                    <s-tabs-pane name="2">Tab2内容</s-tabs-pane>
+                    <s-tabs-pane name="3">Tab3内容</s-tabs-pane>
+                    <s-tabs-pane name="4">Tab4内容</s-tabs-pane>
+                </s-tabs-body>
+            </s-tabs>
+        </div>
+
+<!--        <div>-->
+<!--            <s-input v-model="message"></s-input>-->
+<!--            {{message}}-->
+<!--            <s-input v-model="message"></s-input>-->
+
+<!--            <s-input :readonly="true"></s-input>-->
+<!--            <s-input disabled></s-input>-->
+<!--            <s-input error="名字错误"></s-input>-->
+<!--            <s-input @change="inputChange"></s-input>-->
+<!--        </div>-->
+
+    <!--    <div>-->
+<!--            <s-button >-->
+<!--                按钮JS-->
+<!--            </s-button>-->
+    <!--        <s-button icon="settings">-->
+    <!--            按钮-->
+    <!--        </s-button>-->
+    <!--        <s-button icon="settings" icon-position="right">-->
+    <!--            按钮-->
+    <!--        </s-button>-->
+<!--            <s-button :loading="loadings" icon="settings" @click="loadings = !loadings">-->
+<!--                按钮loading-->
+<!--            </s-button>-->
+<!--            <s-button-group>-->
+<!--                <s-button icon="settings" icon-position="right">按钮</s-button>-->
+<!--                <s-button icon="left">上一页</s-button>-->
+<!--                <s-button icon="right" icon-position="right">下一页</s-button>-->
+<!--            </s-button-group>-->
+    <!--    </div>-->
+
+</div>
+<script src="./src/app.js"></script>
+</body>
+</html>
